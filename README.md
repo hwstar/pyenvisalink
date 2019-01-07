@@ -11,3 +11,4 @@ This is still beta software, and requires python 3.4+.  So far it has only been 
 ### my changes (crackers8199)
 - added entry/exit delays to all arm/disarm actions
 - make sure armed_zero_entry_delay is cleared on any disarm action or arming without *9
+- add logging configuration as a constructor argument so that programs can have a consistent logging format
