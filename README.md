@@ -8,7 +8,5 @@ I'm currently working on integrating it with the [Home Assistant](https://home-a
 
 This is still beta software, and requires python 3.4+.  So far it has only been tested with an Envisalink 3 and Honeywell Vista 20p panel.
 
-### my changes (crackers8199)
-- added entry/exit delays to all arm/disarm actions
-- make sure armed_zero_entry_delay is cleared on any disarm action or arming without *9
+### my changes (cinntax)
 - add logging configuration as a constructor argument so that programs can have a consistent logging format
