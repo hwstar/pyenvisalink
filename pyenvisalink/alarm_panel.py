@@ -13,7 +13,7 @@ class EnvisalinkAlarmPanel:
     def __init__(self, host, port=4025, panelType='HONEYWELL',
                  envisalinkVersion=3, userName='user', password='user',
                  zoneTimerInterval=20, keepAliveInterval=30, eventLoop=None,
-                 connectionTimeout=10):
+                 connectionTimeout=10, loggingconfig = None):
         self._host = host
         self._port = port
         self._connectionTimeout = connectionTimeout
@@ -43,10 +43,14 @@ class EnvisalinkAlarmPanel:
         self._cidEventCallback = self._defaultCallback
         self._zoneTimerCallback = self._defaultCallback
 
-        loggingconfig = {'level': 'DEBUG',
+        defloggingconfig = {'level': 'DEBUG',
                      'format': '%(asctime)s %(levelname)s <%(name)s %(module)s %(funcName)s> %(message)s',
                      'datefmt': '%a, %d %b %Y %H:%M:%S'}
-
+        
+        # If logging configuration not passed in as a named argument, use the default
+        if(loggingconfig is None):
+            loggingconfig = defloggingconfig
+            
         logging.basicConfig(**loggingconfig)
 
     @property
